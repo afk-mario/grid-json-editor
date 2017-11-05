@@ -1,0 +1,11 @@
+.row {
+  width: 100%;
+  display: block;
+  padding: var(--margin);
+  text-align: left;
+  background: var(--white);
+  border-bottom: 2px solid var(--light-gray);
+}
+.row:not(:last-child) {
+  margin: 0 0 0 0;
+}

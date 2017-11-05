@@ -1,0 +1,34 @@
+.tasks {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--dark-gray);
+  border-top: 2px solid var(--blue);
+  color: var(--light-gray);
+  text-align: center;
+}
+
+.tasks li {
+  cursor: pointer;
+  height: 100%;
+  width: auto;
+  transition: color 0.2s ease;
+  display: flex;
+  flex: 1 0 auto;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+}
+
+.tasks li:hover {
+  color: var(--white);
+}
+
+.tasks li:not(:last-child) {
+    border-right: 1px solid var(--light-gray);
+}

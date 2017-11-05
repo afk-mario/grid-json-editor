@@ -1,0 +1,27 @@
+form {
+  display: flex;
+  padding: var(--margin);
+  margin: auto;
+  width: 100%;
+  max-width: 400px;
+  flex-flow: column nowrap;
+}
+
+form input {
+  width: 100%;
+  height: auto;
+  padding: var(--half-margin);
+}
+
+form > *:not(:first-child) {
+  margin: var(--margin) 0 0 0;
+}
+
+form label {
+  margin: 0 0 var(--half-margin) 0;
+  display: block;
+}
+
+form button {
+  padding: var(--margin);
+}

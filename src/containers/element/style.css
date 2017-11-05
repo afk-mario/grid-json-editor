@@ -1,0 +1,65 @@
+.element {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  height: 100%;
+}
+
+.element-preview {
+  height: 40%;
+  width: 100%;
+  background: var(--dark-gray);
+  color: var(--white);
+  text-transform: uppercase;
+  font-size: 3em;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: var(--border-division) solid var(--medium-gray);
+}
+
+.element-bottom {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.element-preview h2 {
+  margin: 0;
+  padding: 0;
+}
+
+.element-static {
+  width: 50%;
+  max-width: 400px;
+  height: 100%;
+  background: var(--light-gray);
+}
+
+.element-child {
+  width: 50%;
+  display: flex;
+  flex: 1 0 auto;
+  flex-flow: column nowrap;
+  height: 100%;
+  overflow-y: auto;
+  padding: 0;
+  background: var(--light-gray);
+  border-left: var(--border-division) solid var(--medium-gray);
+}
+
+.element-child .container {
+  padding: var(--margin);
+}
+
+.element .tasks {
+  height: 15%;
+}
+
+.element .list {
+  flex: 1 0 auto;
+  height: 85%;
+  overflow-y: auto;
+}

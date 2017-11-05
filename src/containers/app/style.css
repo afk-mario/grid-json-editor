@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+:root {
+  --font: 'Open Sans', sans-serif;
+
+  /* border-sizes */
+  --border-division: 2px;
+
+  /* sizes */
+  --header-height: 50px;
+
+  /* colors */
+
+  --white: #ffffff;
+  --black: #000000;
+  --dark-gray: #0c0c0d;
+  --medium-gray: #323234;
+  --light-gray: #b2b2b2;
+  --light-gray: #f2f2f2;
+  --blue: #0080ff;
+
+  /* margins */
+
+  --margin: 20px;
+  --half-margin: calc(var(--margin) * 0.5);
+  --double-margin: calc(var(--margin) * 2);
+
+  /* shadows */
+  --text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+  --box-shadow-2: 0 7px 14px rgba(50, 50, 93, 0.1),
+    0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font);
+}
+
+.page-child {
+  height: calc(100vh - var(--header-height));
+}
+
+.wrapper {
+  width: 100%;
+  /* max-width: 1024px; */
+  margin: auto;
+  display: block;
+}
+
+.json {
+  height: 100%;
+  width: 100%;
+  display: block;
+  background: var(--dark-gray);
+}
+
+.white-container {
+  background: var(--white);
+  box-shadow: var(--box-shadow);
+}
+
+.page-child {
+  border-top: var(--border-division) solid var(--medium-gray);
+}
