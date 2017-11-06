@@ -1,10 +1,13 @@
 import {connect} from 'react-redux';
 import List from '../../components/list';
+import {deleteElementType} from './actions';
+import {withRouter} from 'react-router';
+import {getRandomMessage} from '../../lib/messages';
 
 const mapStateToProps = state => {
   const {elementTypes} = state || [];
   const items = elementTypes.map(item => ({
-    id: item.id,
+    id: item.pk,
     text: `${item.name}`,
   }));
   return {
@@ -12,14 +15,21 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch, props) => {
   return {
-    onClick: id => {
-      console.log(`click ${id}`);
+    onClick: pk => {
+      window.alert(getRandomMessage());
+      // console.log(pk);
+      // props.history.push(`/types/edit/${pk}`);
+    },
+    onDelete: pk => {
+      dispatch(deleteElementType(pk));
     },
   };
 };
 
-const ElementTypesList = connect(mapStateToProps, mapDispatchToProps)(List);
+const ElementTypesList = withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(List),
+);
 
 export default ElementTypesList;

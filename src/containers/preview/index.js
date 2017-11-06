@@ -1,7 +1,8 @@
 import {connect} from 'react-redux';
 import Canvas from '../../components/canvas';
+import {withRouter} from 'react-router';
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, props) => {
   const {elements} = state || [];
   return {
     items: elements,
@@ -11,14 +12,16 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch, props) => {
   return {
-    onClick: id => {
-      console.log(`click ${id}`);
+    onClick: pk => {
+      props.history.push(`/components/edit/${pk}`);
     },
   };
 };
 
-const Preview = connect(mapStateToProps, mapDispatchToProps)(Canvas);
+const Preview = withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(Canvas),
+);
 
 export default Preview;

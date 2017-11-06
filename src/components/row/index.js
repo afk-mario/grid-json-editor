@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 
 import './style.css';
 
-const Row = ({onClick, text}) => (
-  <li className="row" onClick={onClick}>
-    {text}
+const Row = ({onClick, text, children}) => (
+  <li className="row">
+    <span onClick={onClick}>{text}</span>
+    {children}
   </li>
 );
 

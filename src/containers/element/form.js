@@ -14,6 +14,12 @@ class Form extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (!nextProps.match.params.pk) return;
+    if (nextProps.match.params.pk !== this.props.match.params.pk)
+      this.setState({...nextProps.item});
+  }
+
   handleInputChange(event) {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
@@ -71,7 +77,7 @@ class Form extends React.Component {
 
     return (
       <div className="container">
-        <form className="white-container" onSubmit={this.handleSubmit}>
+        <form className="dark-container" onSubmit={this.handleSubmit}>
           {spec.map(
             (item, i) =>
               item.hide ? (
@@ -105,7 +111,7 @@ class Form extends React.Component {
               />
             ))}
           <button className="button blue" type="submit">
-            Add Element
+            OK
           </button>
         </form>
       </div>

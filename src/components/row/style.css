@@ -1,11 +1,28 @@
 .row {
   width: 100%;
   display: block;
-  padding: var(--margin);
+  cursor: pointer;
   text-align: left;
-  background: var(--white);
-  border-bottom: 2px solid var(--light-gray);
+  background: var(--dark-gray);
+  color: var(--light-gray);
+  transition: all 0.2s ease;
+  display: flex;
+  flex-flow: row nowrap;
 }
+
+.row span {
+  display: flex;
+  flex: 1;
+  padding: var(--margin);
+  border-bottom: 2px solid var(--medium-gray);
+  transition: all 0.2s ease;
+}
+
+.row span:hover {
+  color: var(--light-blue);
+  border-bottom-color: var(--light-blue);
+}
+
 .row:not(:last-child) {
   margin: 0 0 0 0;
 }

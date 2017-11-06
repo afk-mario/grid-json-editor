@@ -40,11 +40,12 @@
 }
 
 #header a:hover {
+  color: var(--light-blue);
   border-top-color: var(--medium-gray);
 }
 
 #header a.active {
-  color: var(--white);
+  color: var(--light-blue);
   background: var(--medium-gray);
-  border-top-color: var(--blue);
+  border-top-color: var(--light-blue);
 }

@@ -3,14 +3,26 @@ form {
   padding: var(--margin);
   margin: auto;
   width: 100%;
-  max-width: 400px;
+  max-width: 500px;
   flex-flow: column nowrap;
 }
 
 form input {
   width: 100%;
   height: auto;
-  padding: var(--half-margin);
+  padding: var(--half-margin) 0 2px 0;
+  font-size: 1.2em;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  color: var(--light-gray);
+  border-bottom: 2px solid var(--medium-gray);
+  transition: all 0.2s ease;
+}
+
+form input:focus {
+  /* color: var(--light-blue); */
+  border-bottom-color: var(--light-blue);
 }
 
 form > *:not(:first-child) {
@@ -20,9 +32,11 @@ form > *:not(:first-child) {
 form label {
   margin: 0 0 var(--half-margin) 0;
   display: block;
+  color: var(--dark-blue);
 }
 
 form button,
 form .button {
   padding: var(--margin);
 }
+

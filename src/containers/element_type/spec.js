@@ -4,6 +4,7 @@ const spec = [
     label: 'Name',
     type: 'text',
     value: '',
+    required: true,
   },
 ];
 

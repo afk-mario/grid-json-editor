@@ -16,10 +16,11 @@ const mapStateToProps = (state, props) => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch, props) => {
   return {
     onSubmit: element => {
       dispatch(editElement(element));
+      props.history.push('/components/');
     },
   };
 };

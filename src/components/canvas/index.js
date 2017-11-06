@@ -1,12 +1,24 @@
 import React from 'react';
 import {Layer, Rect, Stage, Line} from 'react-konva';
 
+const colors = {
+  blue: '#0080ff',
+  lightBlue: '#98d1cf',
+  darkBlue: '#185869',
+  red: '#c33126',
+  green: '#2ab38d',
+  magenta: '#7a7e9d',
+};
+
 export default ({columns, rows, items, onClick, margin}) => {
   const columnLines = [];
   const rowLines = [];
   const width = 750;
   const height = 200;
   const lineWidth = 1;
+
+  const lineColor = colors.darkBlue;
+  const fillColor = colors.lightBlue;
 
   const tileWidth = width / columns - margin;
   const tileHeight = height / rows - margin;
@@ -18,22 +30,20 @@ export default ({columns, rows, items, onClick, margin}) => {
       <Line
         key={i}
         points={[x, 0, x, height]}
-        stroke="#96d1cf"
+        stroke={lineColor}
         strokeWidth={lineWidth}
-        lineCap="round"
-        lineJoin="round"
       />,
     );
   }
 
-  for ( i = 0; i <= rows; i++) {
+  for (i = 0; i <= rows; i++) {
     const y = tileHeight * i;
 
     rowLines.push(
       <Line
         key={i}
         points={[0, y, width, y]}
-        stroke="#96d1cf"
+        stroke={lineColor}
         strokeWidth={lineWidth}
         lineCap="round"
         lineJoin="round"
@@ -47,7 +57,6 @@ export default ({columns, rows, items, onClick, margin}) => {
       <Layer>{rowLines}</Layer>
       <Layer>
         {items.map(item => {
-          const color = window.Konva.Util.getRandomColor();
           return (
             <Rect
               key={item.pk}
@@ -55,8 +64,13 @@ export default ({columns, rows, items, onClick, margin}) => {
               y={tileHeight * item.y}
               width={tileWidth * item.w}
               height={tileHeight * item.h}
-              fill={color}
-              onClick={onClick}
+              fill={fillColor}
+              opacity={item.hidden ? 0.5 : 0.8}
+              strokeWidth={lineWidth * 2}
+              stroke={colors.green}
+              onClick={() => {
+                onClick(item.pk);
+              }}
             />
           );
         })}

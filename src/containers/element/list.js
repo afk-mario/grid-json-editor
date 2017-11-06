@@ -17,8 +17,10 @@ const mapStateToProps = state => {
 const mapDispatchToProps = (dispatch, props) => {
   return {
     onClick: pk => {
-      // dispatch(deleteElement(pk));
       props.history.push(`/components/edit/${pk}`);
+    },
+    onDelete: pk => {
+      dispatch(deleteElement(pk));
     },
   };
 };

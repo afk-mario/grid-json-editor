@@ -5,6 +5,7 @@
 
   /* border-sizes */
   --border-division: 2px;
+  --tasks-height: 50px;
 
   /* sizes */
   --header-height: 50px;
@@ -59,11 +60,21 @@ html {
   display: block;
 }
 
-.white-container {
+.light-container {
   background: var(--white);
   box-shadow: var(--box-shadow);
 }
 
+.dark-container {
+  background: var(--dark-gray);
+  box-shadow: var(--box-shadow);
+  color: var(--light-gray);
+}
+
 .page-child {
   border-top: var(--border-division) solid var(--medium-gray);
+}
+
+h2 {
+  color: var(--green);
 }

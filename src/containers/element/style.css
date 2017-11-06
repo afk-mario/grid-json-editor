@@ -35,7 +35,7 @@
   width: 50%;
   max-width: 400px;
   height: 100%;
-  background: var(--light-gray);
+  background: var(--black);
 }
 
 .element-child {
@@ -46,7 +46,7 @@
   height: 100%;
   overflow-y: auto;
   padding: 0;
-  background: var(--light-gray);
+  background: var(--black);
   border-left: var(--border-division) solid var(--medium-gray);
 }
 
@@ -54,12 +54,8 @@
   padding: var(--margin);
 }
 
-.element .tasks {
-  height: 12%;
-}
-
 .element .list {
   flex: 1 0 auto;
-  height: 88%;
+  height: calc(100% - var(--tasks-height));
   overflow-y: auto;
 }

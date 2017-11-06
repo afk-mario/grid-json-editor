@@ -69,7 +69,7 @@ class Form extends React.Component {
   render() {
     return (
       <div className="container">
-        <form className="white-container" onSubmit={this.handleSubmit}>
+        <form className="dark-container" onSubmit={this.handleSubmit}>
           {spec.map((item, i) => (
             <Input
               key={i}

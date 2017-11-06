@@ -1,4 +1,5 @@
 .tasks {
+  height: var(--tasks-height);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -7,7 +8,7 @@
   align-items: center;
   justify-content: space-between;
   background: var(--dark-gray);
-  border-top: 2px solid var(--blue);
+  border-top: 2px solid var(--medium-gray);
   color: var(--light-gray);
   text-align: center;
 }
@@ -30,5 +31,5 @@
 }
 
 .tasks li:not(:last-child) {
-    border-right: 1px solid var(--light-gray);
+    border-right: 2px solid var(--medium-gray);
 }

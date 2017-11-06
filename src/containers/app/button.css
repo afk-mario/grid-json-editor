@@ -47,7 +47,7 @@ a.button {
 
 .button.blue {
     color: var(--white);
-    background-color: var(--blue);
+    background-color: var(--dark-blue);
     text-shadow: var(--text-shadow);
 }
 
