@@ -3,7 +3,10 @@ import List from '../../components/list';
 
 const mapStateToProps = state => {
   const {elementTypes} = state || [];
-  const items = elementTypes.map(item => ({id: item.id, text: item.name}));
+  const items = elementTypes.map(item => ({
+    id: item.id,
+    text: `${item.name} - ${item.id}`,
+  }));
   return {
     items,
   };

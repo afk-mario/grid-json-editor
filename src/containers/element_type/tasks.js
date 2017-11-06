@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {withRouter} from 'react-router';
 import {clearElementTypes} from '../../containers/element_type/actions';
 import {exportState} from '../../lib/export';
 import Tasks from '../../components/tasks';
@@ -9,8 +10,14 @@ function mapStateToProps(state) {
   return {items: elementTypes};
 }
 
-let ElementTasks = ({items, dispatch}) => {
+let ElementTasks = ({items, dispatch, history}) => {
   const tasks = [
+    {
+      name: 'Create',
+      onClick: () => {
+        history.push('/types/add');
+      },
+    },
     {
       name: 'Export',
       onClick: () => {
@@ -27,5 +34,5 @@ let ElementTasks = ({items, dispatch}) => {
   return <Tasks items={tasks} />;
 };
 
-ElementTasks = connect(mapStateToProps)(ElementTasks);
+ElementTasks = withRouter(connect(mapStateToProps)(ElementTasks));
 export default ElementTasks;

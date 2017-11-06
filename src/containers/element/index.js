@@ -4,12 +4,13 @@ import RouteWithSubRoutes from '../../components/RouteWithSubRoutes';
 
 import List from './list';
 import Tasks from './tasks';
+import Preview from '../preview';
 import './style.css';
 
 export default ({routes}) => (
   <section className="element">
     <div className="element-preview">
-      <h2>preview</h2>
+      <Preview />
     </div>
     <section className="element-bottom">
       <section className="element-static">

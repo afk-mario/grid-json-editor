@@ -6,8 +6,7 @@ function elementTypes(state = [], action) {
       return [
         ...state,
         {
-          id: action.id,
-          name: action.name,
+          ...action
         },
       ];
     case CLEAR_ELEMENT_TYPES:

@@ -1,31 +1,15 @@
-import React from 'react';
 import {connect} from 'react-redux';
 import {addElementType} from './actions';
+import Form from './form';
 
-let AddElementType = ({dispatch}) => {
-  let input;
-
-  return (
-    <div>
-      <form
-        onSubmit={e => {
-          e.preventDefault();
-          if (!input.value.trim()) {
-            return;
-          }
-          dispatch(addElementType(input.value));
-          input.value = '';
-        }}>
-        <input
-          ref={node => {
-            input = node;
-          }}
-        />
-        <button type="submit">Add ElementType</button>
-      </form>
-    </div>
-  );
+const mapDispatchToProps = dispatch => {
+  return {
+    onSubmit: element => {
+      dispatch(addElementType(element));
+    },
+  };
 };
-AddElementType = connect()(AddElementType);
+
+const AddElementType = connect(null, mapDispatchToProps)(Form);
 
 export default AddElementType;

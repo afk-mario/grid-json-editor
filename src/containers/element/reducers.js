@@ -1,7 +1,4 @@
-import {
-  ADD_ELEMENT,
-  CLEAR_ELEMENTS,
-} from './actions';
+import {ADD_ELEMENT, CLEAR_ELEMENTS} from './actions';
 
 function elements(state = [], action) {
   switch (action.type) {
@@ -9,7 +6,10 @@ function elements(state = [], action) {
       return [
         ...state,
         {
-          ...action.element
+          ...action.element,
+          data: {
+            ...action.element.data,
+          },
         },
       ];
     case CLEAR_ELEMENTS:

@@ -1,12 +1,11 @@
 import {v4} from 'uuid';
 export const ADD_ELEMENT_TYPE = 'ADD_ELEMENT_TYPE';
 
-export function addElementType(name) {
-  console.log(name);
+export function addElementType(elementType) {
   return {
     type: ADD_ELEMENT_TYPE,
     id: v4(),
-    name,
+    ...elementType,
   };
 }
 

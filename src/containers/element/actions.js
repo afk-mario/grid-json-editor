@@ -2,7 +2,6 @@ import {v4} from 'uuid';
 export const ADD_ELEMENT = 'ADD_ELEMENT';
 
 export function addElement(element) {
-  console.log(element);
   return {
     type: ADD_ELEMENT,
     element: {

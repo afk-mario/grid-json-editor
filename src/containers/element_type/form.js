@@ -1,7 +1,9 @@
 import React from 'react';
-import Select from 'react-select';
+import {v4} from 'uuid';
 import Input from '../../components/input';
 import spec from './spec';
+import specField from './spec_field';
+import Field from './field-form';
 
 class Form extends React.Component {
   constructor(props) {
@@ -11,16 +13,16 @@ class Form extends React.Component {
       {},
       ...spec.map(({name, value}) => ({[name]: value})),
     );
+
     this.state = {
       ...this.state,
-      type: null,
-      data: {},
+      fields: [],
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleInputDataChange = this.handleInputDataChange.bind(this);
-    this.onSelectOption = this.onSelectOption.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleExtraField = this.handleExtraField.bind(this);
+    this.handleExtraFieldChange = this.handleExtraFieldChange.bind(this);
   }
 
   handleInputChange(event) {
@@ -33,51 +35,42 @@ class Form extends React.Component {
     });
   }
 
-  handleInputDataChange(event) {
-    const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = target.name;
-
-    this.setState({
-      data: {
-        [name]: value,
-      },
-    });
-  }
-
   handleSubmit(event) {
     const {onSubmit} = this.props;
 
     event.preventDefault();
     onSubmit(this.state);
-    const state = Object.assign(
+    let state = Object.assign(
       {},
       ...spec.map(({name, value}) => ({[name]: value})),
     );
+    state = {
+      ...state,
+      fields: [],
+    };
     this.setState({...state});
   }
 
-  onSelectOption(item) {
-    const {name} = item;
-    const data = Object.assign(
-      {},
-      ...item.fields.map(({name, value}) => ({[name]: value})),
-    );
+  handleExtraField() {
+    const field = {
+      pk: v4(),
+    };
+    this.setState({fields: [...this.state.fields, field]});
+  }
+
+  handleExtraFieldChange(item) {
+    const {fields} = this.state;
+
     this.setState({
-      name,
-      data,
-      elementType: item,
+      fields: fields.map(field => (field.pk === item.pk ? {...item} : item)),
     });
   }
 
   render() {
-    const {items} = this.props;
-    const item = this.state.elementType;
-
     return (
       <div className="container">
         <form className="white-container" onSubmit={this.handleSubmit}>
-          {spec.map((item, i) => ( item.hide ? '' :
+          {spec.map((item, i) => (
             <Input
               key={i}
               {...item}
@@ -85,27 +78,20 @@ class Form extends React.Component {
               onChange={this.handleInputChange}
             />
           ))}
-          <Select
-            name="name"
-            options={items}
-            labelKey="name"
-            valueKey="name"
-            value={this.state.name}
-            onChange={this.onSelectOption}
-            clearable={false}
-            required
-          />
-          {item &&
-            item.fields.map((field, i) => (
-              <Input
-                key={i}
-                {...field}
-                value={this.state.data[field.name]}
-                onChange={this.handleInputDataChange}
-              />
-            ))}
+          <h2>Custom Data</h2>
+          <span onClick={this.handleExtraField}>add</span>
+          {this.state.fields.map((item, i) => (
+            <Field
+              key={i}
+              pk={item.pk}
+              value={item}
+              spec={specField}
+              onChange={this.handleExtraFieldChange}
+            />
+          ))}
+
           <button className="button blue" type="submit">
-            Add Element
+            Add Element Type
           </button>
         </form>
       </div>
