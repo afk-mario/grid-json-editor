@@ -8,6 +8,7 @@
     "lodash": "^4.17.4",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-json-pretty": "^1.7.4",
     "react-konva": "1.5.5-beta",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",

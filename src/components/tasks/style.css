@@ -26,7 +26,7 @@
 }
 
 .tasks li:hover {
-  color: var(--white);
+  color: var(--light-blue);
 }
 
 .tasks li:not(:last-child) {

@@ -5,14 +5,18 @@ import RouteWithSubRoutes from '../../components/RouteWithSubRoutes';
 import Tasks from './tasks';
 import List from './list';
 
+import './style.css';
+
 export default ({routes}) => (
   <section className="type">
-    <section className="type-child">
-      {routes.map((route, i) => <RouteWithSubRoutes key={i} {...route} />)}
-    </section>
     <section className="type-static">
-      <Tasks />
       <List />
+      <Tasks />
+    </section>
+    <section className="type-child">
+      <div className="container">
+        {routes.map((route, i) => <RouteWithSubRoutes key={i} {...route} />)}
+      </div>
     </section>
   </section>
 );

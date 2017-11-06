@@ -18,6 +18,11 @@
   --light-gray: #b2b2b2;
   --light-gray: #f2f2f2;
   --blue: #0080ff;
+  --light-blue: #98d1cf;
+  --dark-blue: #185869;
+  --red: #c33126;
+  --green: #2ab38d;
+  --magenta: #7a7e9d;
 
   /* margins */
 
@@ -52,13 +57,6 @@ html {
   /* max-width: 1024px; */
   margin: auto;
   display: block;
-}
-
-.json {
-  height: 100%;
-  width: 100%;
-  display: block;
-  background: var(--dark-gray);
 }
 
 .white-container {

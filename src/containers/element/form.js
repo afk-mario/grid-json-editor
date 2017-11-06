@@ -7,16 +7,7 @@ class Form extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = Object.assign(
-      {},
-      ...spec.map(({name, value}) => ({[name]: value})),
-    );
-    this.state = {
-      ...this.state,
-      type: null,
-      data: {},
-    };
-
+    this.state = {...props.item};
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleInputDataChange = this.handleInputDataChange.bind(this);
     this.onSelectOption = this.onSelectOption.bind(this);
@@ -54,7 +45,11 @@ class Form extends React.Component {
       {},
       ...spec.map(({name, value}) => ({[name]: value})),
     );
-    this.setState({...state});
+    this.setState({
+      ...state,
+      data: {},
+      elementType: {fields: []},
+    });
   }
 
   onSelectOption(item) {
@@ -77,14 +72,19 @@ class Form extends React.Component {
     return (
       <div className="container">
         <form className="white-container" onSubmit={this.handleSubmit}>
-          {spec.map((item, i) => ( item.hide ? '' :
-            <Input
-              key={i}
-              {...item}
-              value={this.state[item.name]}
-              onChange={this.handleInputChange}
-            />
-          ))}
+          {spec.map(
+            (item, i) =>
+              item.hide ? (
+                ''
+              ) : (
+                <Input
+                  key={i}
+                  {...item}
+                  value={this.state[item.name]}
+                  onChange={this.handleInputChange}
+                />
+              ),
+          )}
           <Select
             name="name"
             options={items}

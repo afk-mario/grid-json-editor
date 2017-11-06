@@ -5,7 +5,7 @@ const mapStateToProps = state => {
   const {elementTypes} = state || [];
   const items = elementTypes.map(item => ({
     id: item.id,
-    text: `${item.name} - ${item.id}`,
+    text: `${item.name}`,
   }));
   return {
     items,

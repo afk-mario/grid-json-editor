@@ -35,7 +35,7 @@ class FieldForm extends React.Component {
   render() {
     const {spec} = this.props;
     return (
-      <div>
+      <div className="new-field">
         {spec.map((item, i) => (
           <Input
             key={i}

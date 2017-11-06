@@ -78,8 +78,12 @@ class Form extends React.Component {
               onChange={this.handleInputChange}
             />
           ))}
-          <h2>Custom Data</h2>
-          <span onClick={this.handleExtraField}>add</span>
+          <div className="container two-columns">
+            <h2>Custom Data</h2>
+            <span className="button blue" onClick={this.handleExtraField}>
+              Add Field
+            </span>
+          </div>
           {this.state.fields.map((item, i) => (
             <Field
               key={i}

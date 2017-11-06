@@ -19,6 +19,12 @@ let ElementTasks = ({items, dispatch, history}) => {
       },
     },
     {
+      name: 'Load',
+      onClick: () => {
+        console.log('Load');
+      },
+    },
+    {
       name: 'Export',
       onClick: () => {
         exportState({items, name: 'component_types'});

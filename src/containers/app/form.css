@@ -22,6 +22,7 @@ form label {
   display: block;
 }
 
-form button {
+form button,
+form .button {
   padding: var(--margin);
 }

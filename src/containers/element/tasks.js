@@ -25,6 +25,12 @@ let ElementTasks = ({items, dispatch, history}) => {
       },
     },
     {
+      name: 'Load',
+      onClick: () => {
+        console.log('Load');
+      },
+    },
+    {
       name: 'Clear',
       onClick: () => {
         dispatch(clearElements());

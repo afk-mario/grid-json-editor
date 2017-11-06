@@ -17,3 +17,19 @@ export function clearElements() {
     type: CLEAR_ELEMENTS,
   };
 }
+
+export const EDIT_ELEMENT = 'EDIT_ELEMENT';
+export function editElement(element) {
+  return {
+    type: EDIT_ELEMENT,
+    element,
+  };
+}
+
+export const DELETE_ELEMENT = 'DELETE_ELEMENT';
+export function deleteElement(pk) {
+  return {
+    type: DELETE_ELEMENT,
+    pk,
+  };
+}

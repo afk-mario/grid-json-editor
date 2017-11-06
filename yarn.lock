@@ -5165,6 +5165,12 @@ react-input-autosize@^2.0.1:
     create-react-class "^15.5.2"
     prop-types "^15.5.8"
 
+react-json-pretty@^1.7.4:
+  version "1.7.4"
+  resolved "https://registry.yarnpkg.com/react-json-pretty/-/react-json-pretty-1.7.4.tgz#6daa917da9400feff111bc01749e4793feca1869"
+  dependencies:
+    create-react-class "^15.5.2"
+
 react-konva@1.5.5-beta:
   version "1.5.5-beta"
   resolved "https://registry.yarnpkg.com/react-konva/-/react-konva-1.5.5-beta.tgz#4884417a1c25c4b335444bed94a637e4dd824119"

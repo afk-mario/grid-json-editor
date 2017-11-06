@@ -3,7 +3,11 @@ import Loading from './components/loading';
 
 import Elements from './containers/element';
 import AddElement from './containers/element/add';
+import EditElement from './containers/element/edit';
+
 import AddElementType from './containers/element_type/add';
+
+import Json from './containers/json/';
 
 import ElementTypes from './containers/element_type';
 import {Redirect} from 'react-router-dom';
@@ -25,8 +29,8 @@ const routes = [
         exact: true,
       },
       {
-        path: '/components/delete',
-        component: Loading,
+        path: '/components/edit/:pk',
+        component: EditElement,
         exact: true,
       },
     ],
@@ -52,7 +56,7 @@ const routes = [
     path: '/json',
     name: 'Json',
     exact: true,
-    component: () => <div className="json" />,
+    component: Json,
   },
 ];
 

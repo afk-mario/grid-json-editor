@@ -1,5 +1,7 @@
 import {connect} from 'react-redux';
 import List from '../../components/list';
+import {deleteElement} from './actions';
+import {withRouter} from 'react-router';
 
 const mapStateToProps = state => {
   const {elements} = state || [];
@@ -12,14 +14,17 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch, props) => {
   return {
-    onClick: id => {
-      console.log(`click ${id}`);
+    onClick: pk => {
+      // dispatch(deleteElement(pk));
+      props.history.push(`/components/edit/${pk}`);
     },
   };
 };
 
-const ElementsList = connect(mapStateToProps, mapDispatchToProps)(List);
+const ElementsList = withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(List),
+);
 
 export default ElementsList;

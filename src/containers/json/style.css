@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:300');
+
+.json {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  display: block;
+  color: var(--white);
+  background: var(--dark-gray);
+  overflow: auto;
+}
+
+.json pre {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 0.9em;
+  padding: 0;
+  margin: 0;
+  padding: var(--margin);
+}
+
+.json-pretty {
+  background: var(--dark-gray);
+  color: var(--dark-blue);
+}
+
+.json-pretty .json-key {
+  color: var(--light-blue);
+}
+
+.json-pretty .json-value {
+  color: var(--red);
+}
+
+.json-pretty .json-boolean {
+  color: var(--red);
+}
+
+.json-pretty .json-string {
+  color: var(--green);
+}

@@ -55,11 +55,11 @@
 }
 
 .element .tasks {
-  height: 15%;
+  height: 12%;
 }
 
 .element .list {
   flex: 1 0 auto;
-  height: 85%;
+  height: 88%;
   overflow-y: auto;
 }

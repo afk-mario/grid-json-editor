@@ -14,7 +14,7 @@ const List = ({items, onClick}) => {
   return (
     <ul className="list">
       {items.map((item, index) => (
-        <Row key={item.id} {...item} onClick={() => onClick(index)} />
+        <Row key={item.id} {...item} onClick={() => onClick(item.id)} />
       ))}
     </ul>
   );

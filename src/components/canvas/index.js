@@ -6,19 +6,19 @@ export default ({columns, rows, items, onClick, margin}) => {
   const rowLines = [];
   const width = 750;
   const height = 200;
-  const lineWidth = 2;
+  const lineWidth = 1;
 
   const tileWidth = width / columns - margin;
   const tileHeight = height / rows - margin;
 
-  for (var i = 0; i < columns; i++) {
+  for (var i = 0; i <= columns + 1; i++) {
     const x = tileWidth * i;
 
     columnLines.push(
       <Line
         key={i}
         points={[x, 0, x, height]}
-        stroke="#f8f8f8"
+        stroke="#96d1cf"
         strokeWidth={lineWidth}
         lineCap="round"
         lineJoin="round"
@@ -26,14 +26,14 @@ export default ({columns, rows, items, onClick, margin}) => {
     );
   }
 
-  for ( i = 0; i < rows; i++) {
+  for ( i = 0; i <= rows; i++) {
     const y = tileHeight * i;
 
     rowLines.push(
       <Line
         key={i}
         points={[0, y, width, y]}
-        stroke="#f8f8f8"
+        stroke="#96d1cf"
         strokeWidth={lineWidth}
         lineCap="round"
         lineJoin="round"
