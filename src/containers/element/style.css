@@ -8,7 +8,7 @@
 .element-preview {
   height: 40%;
   width: 100%;
-  background: var(--dark-gray);
+  background: var(--black);
   color: var(--white);
   text-transform: uppercase;
   font-size: 3em;
@@ -17,6 +17,11 @@
   align-items: center;
   justify-content: center;
   border-bottom: var(--border-division) solid var(--medium-gray);
+}
+
+.element-preview > div {
+  padding: var(--half-margin);
+  background: var(--dark-gray);
 }
 
 .element-bottom {

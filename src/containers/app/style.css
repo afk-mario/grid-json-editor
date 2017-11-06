@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:300,500');
 
 :root {
-  --font: 'Open Sans', sans-serif;
+  /* --font: 'Open Sans', sans-serif; */
+  --font: 'Source Code Pro', monospace;
 
   /* border-sizes */
   --border-division: 2px;
@@ -46,6 +48,7 @@ body,
 html {
   margin: 0;
   padding: 0;
+  background: var(--black);
   font-family: var(--font);
 }
 

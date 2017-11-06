@@ -33,6 +33,7 @@
   color: var(--light-gray);
   text-decoration: none;
   border-top: 3px solid var(--dark-gray);
+  background: var(--black);
   transition: all 0.2s ease;
 }
 #header li:not(:last-child) {
@@ -46,6 +47,6 @@
 
 #header a.active {
   color: var(--light-blue);
-  background: var(--medium-gray);
+  background: var(--dark-gray);
   border-top-color: var(--light-blue);
 }
