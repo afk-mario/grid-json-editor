@@ -3,8 +3,6 @@
   width: 100%;
   display: flex;
   flex-flow: row wrap;
-  align-items: center;
-  justify-content: flex-start;
 }
 
 .type-child {
@@ -54,4 +52,28 @@
 .type .two-columns h2 {
   display: flex;
   flex: 1 0 auto;
+}
+
+@media screen and (max-width: 600px) {
+  .type {
+    overflow-y: auto;
+    flex-flow: column nowrap;
+  }
+
+  .type-child {
+    width: 100%;
+    height: auto;
+    border-left: none;
+    border-top: var(--border-division) solid var(--medium-gray);
+  }
+
+  .type-static {
+    max-width: none;
+    width: 100%;
+    height: auto;
+  }
+
+  .type .list {
+    height: auto;
+  }
 }

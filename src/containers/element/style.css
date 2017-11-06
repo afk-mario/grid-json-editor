@@ -8,6 +8,7 @@
 .element-preview {
   height: 40%;
   width: 100%;
+  overflow: auto;
   background: var(--black);
   color: var(--white);
   text-transform: uppercase;
@@ -22,6 +23,7 @@
 .element-preview > div {
   padding: var(--half-margin);
   background: var(--dark-gray);
+  margin: var(--margin);
 }
 
 .element-bottom {
@@ -63,4 +65,32 @@
   flex: 1 0 auto;
   height: calc(100% - var(--tasks-height));
   overflow-y: auto;
+}
+
+@media screen and (max-width: 600px) {
+  .element {
+    overflow-y: auto;
+    flex-flow: column nowrap;
+  }
+
+  .element-bottom {
+    overflow-y: auto;
+  }
+
+  .element-child {
+    width: 100%;
+    height: auto;
+    border-left: none;
+    border-top: var(--border-division) solid var(--medium-gray);
+  }
+
+  .element-static {
+    max-width: none;
+    width: 100%;
+    height: auto;
+  }
+
+  .element .list {
+    height: auto;
+  }
 }

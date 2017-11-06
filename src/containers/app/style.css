@@ -5,9 +5,10 @@
   /* --font: 'Open Sans', sans-serif; */
   --font: 'Source Code Pro', monospace;
 
-  /* border-sizes */
+  /* sizes */
   --border-division: 2px;
   --tasks-height: 50px;
+  --mobile-size: 600px;
 
   /* sizes */
   --header-height: 50px;
