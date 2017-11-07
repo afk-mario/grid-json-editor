@@ -4,6 +4,7 @@ const spec = [
     label: 'Name',
     type: 'text',
     value: '',
+    required: true,
   },
   {
     name: 'label',
@@ -15,7 +16,8 @@ const spec = [
     name: 'type',
     label: 'Type',
     type: 'text',
-    value: '',
+    value: 'text',
+    required: true,
   },
   {
     name: 'value',

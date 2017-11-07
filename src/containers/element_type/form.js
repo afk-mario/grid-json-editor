@@ -55,6 +55,7 @@ class Form extends React.Component {
     const field = {
       pk: v4(),
     };
+
     this.setState({fields: [...this.state.fields, field]});
   }
 
@@ -62,7 +63,7 @@ class Form extends React.Component {
     const {fields} = this.state;
 
     this.setState({
-      fields: fields.map(field => (field.pk === item.pk ? {...item} : item)),
+      fields: fields.map(field => (field.pk === item.pk ? {...item} : field)),
     });
   }
 

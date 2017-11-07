@@ -5,7 +5,7 @@ const Input = props => {
   const {name, label} = props;
   return (
     <div>
-      <label htmlFor={name}>{label}</label>
+      <label htmlFor={name}>{label ? label : name}</label>
       <input id={name} name={name} {...props} />
     </div>
   );
@@ -13,7 +13,7 @@ const Input = props => {
 
 Input.propTypes = {
   name: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
+  label: PropTypes.string,
 };
 
 export default Input;

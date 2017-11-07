@@ -102,14 +102,17 @@ class Form extends React.Component {
             required
           />
           {item &&
-            item.fields.map((field, i) => (
-              <Input
-                key={i}
-                {...field}
-                value={this.state.data[field.name]}
-                onChange={this.handleInputDataChange}
-              />
-            ))}
+            item.fields.map((field, i) => {
+              console.log(field);
+              return (
+                <Input
+                  key={i}
+                  {...field}
+                  value={this.state.data[field.name]}
+                  onChange={this.handleInputDataChange}
+                />
+              );
+            })}
           <button className="button blue" type="submit">
             OK
           </button>

@@ -62,13 +62,13 @@ const spec = [
   },
   {
     name: 'btnScreenID',
-    label: 'Button Id',
+    label: 'Button Screen Id',
     type: 'text',
     value: '',
   },
   {
     name: 'btnTargetId',
-    label: 'Target',
+    label: 'Button Target Id',
     type: 'text',
     value: '',
   },

@@ -2,7 +2,6 @@
   "name": "interactive-museum-editor",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://afk-mcz.github.io/grid-json-editor/",
   "dependencies": {
     "file-saver": "^1.3.3",
     "gh-pages": "^1.0.0",
