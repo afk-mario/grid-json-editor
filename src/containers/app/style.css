@@ -12,6 +12,7 @@
 
   /* sizes */
   --header-height: 50px;
+  --footer-height: 20px;
 
   /* colors */
 
@@ -53,10 +54,6 @@ html {
   font-family: var(--font);
 }
 
-.page-child {
-  height: calc(100vh - var(--header-height));
-}
-
 .wrapper {
   width: 100%;
   /* max-width: 1024px; */
@@ -76,6 +73,7 @@ html {
 }
 
 .page-child {
+  height: calc(100vh - var(--header-height) - var(--footer-height));
   border-top: var(--border-division) solid var(--medium-gray);
 }
 

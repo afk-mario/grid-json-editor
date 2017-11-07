@@ -1,0 +1,13 @@
+#footer {
+  height: var(--footer-height);
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.version-number {
+  color: var(--green);
+  font-size: 0.5em;
+}

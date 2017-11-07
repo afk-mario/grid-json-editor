@@ -26,7 +26,7 @@
 #header a {
   margin: 0;
   width: 100%;
-  height: var(--header-height);
+  height: calc(var(--header-height));
   padding: var(--half-margin);
   text-align: center;
   display: block;
