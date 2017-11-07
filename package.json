@@ -23,7 +23,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "predeploy": "npm run build",
+    "predeploy": "npm run build && npm version minor",
     "deploy": "now build --public --alias",
     "eject": "react-scripts eject"
   }

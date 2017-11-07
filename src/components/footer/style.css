@@ -1,5 +1,5 @@
 #footer {
-  height: var(--footer-height);
+  hnpm version patcheight: var(--footer-height);
   width: 100%;
   display: flex;
   flex-flow: column nowrap;
