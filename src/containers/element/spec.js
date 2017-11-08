@@ -75,9 +75,9 @@ const spec = [
   {
     name: 'linePoints',
     label: 'Line Points',
-    type: 'number',
-    value: undefined,
-    hide: true,
+    type: 'text',
+    value: '[]',
+    hide: false,
   },
 ];
 
