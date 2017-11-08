@@ -58,7 +58,7 @@ export default ({columns, rows, items, onClick, margin}) => {
   }
 
   return (
-    <div class="canvas-wrapper">
+    <div className="canvas-wrapper">
       <Stage width={width} height={height}>
         <Layer>{columnLines}</Layer>
         <Layer>{rowLines}</Layer>

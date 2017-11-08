@@ -5,7 +5,8 @@ class Form extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {coords: [...props.linePoints]};
+    const items = props.linePoints || [];
+    this.state = {coords: items};
 
     this.handleExtraField = this.handleExtraField.bind(this);
     this.handleExtraFieldChange = this.handleExtraFieldChange.bind(this);
@@ -14,12 +15,15 @@ class Form extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.linePoints !== this.props.linePoints) {
-      this.setState({coords: [...nextProps.linePoints]});
+    const items = nextProps.linePoints || [];
+      this.setState({coords: items});
     }
   }
 
   handleExtraField() {
     const field = [0, 0];
+    console.log('cli');
+    console.log(this.state.coords);
     this.setState({coords: [...this.state.coords, field]});
   }
 
@@ -42,6 +46,7 @@ class Form extends React.Component {
   }
 
   render() {
+    const items = this.state.coords || [];
     return (
       <div>
         <div className="container two-columns">
@@ -50,7 +55,7 @@ class Form extends React.Component {
             Add Field
           </span>
         </div>
-        {this.state.coords.map((item, i) => (
+        {items.map((item, i) => (
           <CoordsRow
             key={i}
             id={i}
