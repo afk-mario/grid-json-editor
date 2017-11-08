@@ -82,14 +82,14 @@ export default ({columns, rows, items, onClick, margin}) => {
       </Layer>
       <Layer>
         {items.map(item => {
-          const nArr = item.linePoints.map(item => [
+          const nArr = item.linePoints.map((item, i) => [
             item[0] * tileWidth,
             item[1] * tileHeight,
           ]);
           const arr = flatten(nArr);
           return (
             <Line
-              key={item.id}
+              key={item.pk}
               points={arr}
               stroke={colors.red}
               strokeWidth={lineWidth}

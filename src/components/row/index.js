@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './style.css';
 
-const Row = ({onClick, text, children}) => (
+const Row = ({onClick, text, children, id}) => (
   <li className="row">
     <span onClick={onClick}>{text}</span>
     {children}
