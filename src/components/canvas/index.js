@@ -82,7 +82,8 @@ export default ({columns, rows, items, onClick, margin}) => {
       </Layer>
       <Layer>
         {items.map(item => {
-          const nArr = item.linePoints.map((item, i) => [
+          const itemArr = item.linePoints || [];
+          const nArr = itemArr.map((item, i) => [
             item[0] * tileWidth,
             item[1] * tileHeight,
           ]);
