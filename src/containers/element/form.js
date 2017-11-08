@@ -2,6 +2,7 @@ import React from 'react';
 import Select from 'react-select';
 import Input from '../../components/input';
 import spec from './spec';
+import CoordsList from '../../components/coordsList';
 
 class Form extends React.Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class Form extends React.Component {
     this.handleInputDataChange = this.handleInputDataChange.bind(this);
     this.onSelectOption = this.onSelectOption.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.onCoordsChange = this.onCoordsChange.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -56,6 +58,7 @@ class Form extends React.Component {
       ...state,
       data: {},
       elementType: {fields: []},
+      linePoints: [],
     });
   }
 
@@ -70,6 +73,10 @@ class Form extends React.Component {
       data,
       elementType: item,
     });
+  }
+
+  onCoordsChange(arr) {
+    this.setState({linePoints: arr.coords});
   }
 
   render() {
@@ -92,6 +99,11 @@ class Form extends React.Component {
                 />
               ),
           )}
+          <CoordsList
+            name="CoordsRow"
+            linePoints={this.state.linePoints}
+            onCoordsChange={this.onCoordsChange}
+          />
           <Select
             name="name"
             options={items}

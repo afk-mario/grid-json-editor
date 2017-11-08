@@ -1,6 +1,11 @@
 import React from 'react';
 import {Layer, Rect, Stage, Line} from 'react-konva';
 
+function flatten(arr) {
+  const flat = [].concat(...arr);
+  return flat.some(Array.isArray) ? flatten(flat) : flat;
+}
+
 const colors = {
   blue: '#0080ff',
   lightBlue: '#98d1cf',
@@ -71,6 +76,23 @@ export default ({columns, rows, items, onClick, margin}) => {
               onClick={() => {
                 onClick(item.pk);
               }}
+            />
+          );
+        })}
+      </Layer>
+      <Layer>
+        {items.map(item => {
+          const nArr = item.linePoints.map(item => [
+            item[0] * tileWidth,
+            item[1] * tileHeight,
+          ]);
+          const arr = flatten(nArr);
+          return (
+            <Line
+              key={item.id}
+              points={arr}
+              stroke={colors.red}
+              strokeWidth={lineWidth}
             />
           );
         })}
