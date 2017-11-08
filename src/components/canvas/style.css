@@ -1,0 +1,25 @@
+.canvas-wrapper {
+  padding: var(--half-margin);
+}
+
+.canvas-wrapper > div {
+  background: var(--dark-gray);
+  padding: var(--half-margin);
+}
+
+.canvas-wrapper,
+.canvas-wrapper > div {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.canvas-wrapper canvas {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.konvajs-content {
+  width: 100% !important;
+  height: 100% !important;
+}

@@ -9,6 +9,8 @@ const mapStateToProps = (state, props) => {
     items: elements,
     columns,
     rows,
+    width: 900,
+    height: 300,
     margin: 0,
   };
 };

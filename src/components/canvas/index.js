@@ -1,5 +1,6 @@
 import React from 'react';
 import {Layer, Rect, Stage, Line} from 'react-konva';
+import './style.css';
 
 function flatten(arr) {
   const flat = [].concat(...arr);
@@ -57,47 +58,49 @@ export default ({columns, rows, items, onClick, margin}) => {
   }
 
   return (
-    <Stage width={width} height={height}>
-      <Layer>{columnLines}</Layer>
-      <Layer>{rowLines}</Layer>
-      <Layer>
-        {items.map(item => {
-          return (
-            <Rect
-              key={item.pk}
-              x={tileWidth * item.x}
-              y={tileHeight * item.y}
-              width={tileWidth * item.w}
-              height={tileHeight * item.h}
-              fill={fillColor}
-              opacity={item.hidden ? 0.5 : 0.8}
-              strokeWidth={lineWidth * 2}
-              stroke={colors.green}
-              onClick={() => {
-                onClick(item.pk);
-              }}
-            />
-          );
-        })}
-      </Layer>
-      <Layer>
-        {items.map(item => {
-          const itemArr = item.linePoints || [];
-          const nArr = itemArr.map((item, i) => [
-            item[0] * tileWidth,
-            item[1] * tileHeight,
-          ]);
-          const arr = flatten(nArr);
-          return (
-            <Line
-              key={item.pk}
-              points={arr}
-              stroke={colors.red}
-              strokeWidth={lineWidth}
-            />
-          );
-        })}
-      </Layer>
-    </Stage>
+    <div class="canvas-wrapper">
+      <Stage width={width} height={height}>
+        <Layer>{columnLines}</Layer>
+        <Layer>{rowLines}</Layer>
+        <Layer>
+          {items.map(item => {
+            return (
+              <Rect
+                key={item.pk}
+                x={tileWidth * item.x}
+                y={tileHeight * item.y}
+                width={tileWidth * item.w}
+                height={tileHeight * item.h}
+                fill={fillColor}
+                opacity={item.hidden ? 0.5 : 0.8}
+                strokeWidth={lineWidth * 2}
+                stroke={colors.green}
+                onClick={() => {
+                  onClick(item.pk);
+                }}
+              />
+            );
+          })}
+        </Layer>
+        <Layer>
+          {items.map(item => {
+            const itemArr = item.linePoints || [];
+            const nArr = itemArr.map((item, i) => [
+              item[0] * tileWidth,
+              item[1] * tileHeight,
+            ]);
+            const arr = flatten(nArr);
+            return (
+              <Line
+                key={item.pk}
+                points={arr}
+                stroke={colors.red}
+                strokeWidth={lineWidth}
+              />
+            );
+          })}
+        </Layer>
+      </Stage>
+    </div>
   );
 };
