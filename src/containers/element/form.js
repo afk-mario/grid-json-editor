@@ -18,8 +18,13 @@ class Form extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (!nextProps.match.params.pk) return;
-    if (nextProps.match.params.pk !== this.props.match.params.pk)
-      this.setState({...nextProps.item});
+    if (nextProps.match.params.pk !== this.props.match.params.pk) {
+      const item = nextProps.item;
+      this.setState({
+        ...item,
+        linePoints: item.linePoints,
+      });
+    }
   }
 
   handleInputChange(event) {

@@ -12,9 +12,14 @@ class Form extends React.Component {
     this.handleDeleteExtraField = this.handleDeleteExtraField.bind(this);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.linePoints !== this.props.linePoints) {
+      this.setState({coords: [...nextProps.linePoints]});
+    }
+  }
+
   handleExtraField() {
     const field = [0, 0];
-
     this.setState({coords: [...this.state.coords, field]});
   }
 
@@ -23,7 +28,9 @@ class Form extends React.Component {
     if (i > -1) {
       arr.splice(i, 1);
     }
-    this.setState({coords: arr});
+    this.setState({coords: arr}, () => {
+      this.props.onCoordsChange(this.state);
+    });
   }
 
   handleExtraFieldChange(id, item) {
