@@ -1,9 +1,11 @@
-# Grid Json editor
+# Grid Json Editor
 
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+![logo](./logo.svg)
 
 ## Commands
-  - [npm start](#npm-start)
-  - [npm test](#npm-test)
-  - [npm run build](#npm-run-build)
-  - [npm run eject](#npm-run-eject)
+
+- yarn start
+- yarn build
+- yarn deploy
+
+made by afk @ ellugar.co
