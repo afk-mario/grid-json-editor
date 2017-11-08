@@ -7,6 +7,8 @@ import EditElement from './containers/element/edit';
 
 import AddElementType from './containers/element_type/add';
 
+import Settings from './containers/settings';
+
 import Json from './containers/json/';
 
 import ElementTypes from './containers/element_type';
@@ -57,6 +59,12 @@ const routes = [
     name: 'Json',
     exact: true,
     component: Json,
+  },
+  {
+    path: '/settings',
+    name: 'settings',
+    exact: true,
+    component: Settings,
   },
 ];
 

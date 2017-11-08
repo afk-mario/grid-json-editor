@@ -4,10 +4,11 @@ import {withRouter} from 'react-router';
 
 const mapStateToProps = (state, props) => {
   const {elements} = state || [];
+  const {rows, columns} = state.settings || {columns: 32, rows: 9};
   return {
     items: elements,
-    columns: 32,
-    rows: 9,
+    columns,
+    rows,
     margin: 0,
   };
 };

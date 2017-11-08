@@ -7,7 +7,7 @@ form {
   flex-flow: column nowrap;
 }
 
-form input {
+input {
   width: 100%;
   height: auto;
   padding: var(--half-margin) 0 2px 0;
@@ -20,7 +20,7 @@ form input {
   transition: all 0.2s ease;
 }
 
-form input:focus {
+input:focus {
   /* color: var(--light-blue); */
   border-bottom-color: var(--light-blue);
 }
@@ -29,13 +29,13 @@ form > *:not(:first-child) {
   margin: var(--margin) 0 0 0;
 }
 
-form label {
+label {
   margin: 0 0 var(--half-margin) 0;
   display: block;
   color: var(--dark-blue);
 }
 
-form button,
+button,
 form .button {
   padding: var(--margin);
 }

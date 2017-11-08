@@ -37,6 +37,7 @@ class Form extends React.Component {
 
     this.setState({
       data: {
+        ...this.state.data,
         [name]: value,
       },
     });
@@ -103,7 +104,6 @@ class Form extends React.Component {
           />
           {item &&
             item.fields.map((field, i) => {
-              console.log(field);
               return (
                 <Input
                   key={i}
