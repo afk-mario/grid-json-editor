@@ -9,6 +9,7 @@
   transition: all 0.2s ease;
   display: flex;
   flex-flow: row nowrap;
+  flex: 1 0 auto;
 }
 
 .row span {
