@@ -40,10 +40,12 @@
   justify-content: center;
   text-align: center;
   transition: all 0.2s ease;
+  background: var(--black);
   border: 2px solid var(--dark-blue);
 }
 
 .load .active-drop {
+  color: var(--light-blue);
   border-color: var(--light-blue);
-  background: var(--medium-gray);
+  background: var(--dark-gray);
 }

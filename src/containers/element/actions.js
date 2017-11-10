@@ -33,3 +33,11 @@ export function deleteElement(pk) {
     pk,
   };
 }
+
+export const LOAD_ELEMENTS = '';
+export function loadElements(items) {
+  return {
+    type: LOAD_ELEMENTS,
+    items,
+  };
+}

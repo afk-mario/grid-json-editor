@@ -6,6 +6,6 @@ export const exportState = ({items, name}) => {
     [name]: items,
   };
   const content = JSON.stringify(obj);
-  const blob = new Blob([content], {type: 'text/plain;charset=utf-8'});
+  const blob = new Blob([content], {type: 'application/json;charset=utf-8'});
   FileSaver.saveAs(blob, `${name}.json`);
 };

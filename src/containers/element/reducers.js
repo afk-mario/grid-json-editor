@@ -3,6 +3,7 @@ import {
   CLEAR_ELEMENTS,
   EDIT_ELEMENT,
   DELETE_ELEMENT,
+  LOAD_ELEMENTS,
 } from './actions';
 
 function elements(state = [], action) {
@@ -33,6 +34,8 @@ function elements(state = [], action) {
       return state.filter(item => item.pk !== action.pk);
     case CLEAR_ELEMENTS:
       return [];
+    case LOAD_ELEMENTS:
+      return action.items;
     default:
       return state;
   }

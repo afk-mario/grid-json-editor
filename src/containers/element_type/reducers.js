@@ -3,6 +3,7 @@ import {
   CLEAR_ELEMENT_TYPES,
   EDIT_ELEMENT_TYPE,
   DELETE_ELEMENT_TYPE,
+  LOAD_ELEMENT_TYPES,
 } from './actions';
 
 function elementTypes(state = [], action) {
@@ -25,6 +26,8 @@ function elementTypes(state = [], action) {
       return state.filter(item => item.pk !== action.pk);
     case CLEAR_ELEMENT_TYPES:
       return [];
+    case LOAD_ELEMENT_TYPES:
+      return action.items;
     default:
       return state;
   }

@@ -38,7 +38,7 @@ let SettingsForm = ({
             rejectClassName="reject-drop"
             disabledClassName="disabled-drop"
             onDrop={loadElements}>
-            LOAD <br/> COMPONENTS
+            LOAD <br /> COMPONENTS
           </Dropzone>
         </section>
         <section className="load">
@@ -50,7 +50,7 @@ let SettingsForm = ({
             rejectClassName="reject-drop"
             disabledClassName="disabled-drop"
             onDrop={loadTypes}>
-            LOAD <br/> TYPES
+            LOAD <br /> TYPES
           </Dropzone>
         </section>
         <div className="version-number">V:{version}</div>

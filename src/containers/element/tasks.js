@@ -22,7 +22,7 @@ let ElementTasks = ({items, dispatch, history}) => {
     {
       name: 'Export',
       onClick: () => {
-        exportState({items, name: 'components'});
+        exportState({items, name: 'elements'});
       },
     },
     {

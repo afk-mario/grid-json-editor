@@ -32,3 +32,11 @@ export function deleteElementType(pk) {
     pk,
   };
 }
+
+export const LOAD_ELEMENT_TYPES = 'LOAD_ELEMENT_TYPES';
+export function loadElementTypes(items) {
+  return {
+    type: LOAD_ELEMENT_TYPES,
+    items,
+  };
+}
