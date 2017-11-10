@@ -1,7 +1,7 @@
 import React from 'react';
 import CoordsRow from '../../components/coordsRow';
 
-class Form extends React.Component {
+class CoordsList extends React.Component {
   constructor(props) {
     super(props);
 
@@ -50,7 +50,7 @@ class Form extends React.Component {
     return (
       <div>
         <div className="container two-columns">
-          <h2>LinePoints</h2>
+          <h3>LinePoints</h3>
           <span className="button blue" onClick={this.handleExtraField}>
             Add Field
           </span>
@@ -71,4 +71,4 @@ class Form extends React.Component {
   }
 }
 
-export default Form;
+export default CoordsList;

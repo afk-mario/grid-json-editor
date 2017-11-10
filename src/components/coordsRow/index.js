@@ -10,7 +10,7 @@ const coordsRow = props => {
   return (
     <div className="coords-row">
       <label htmlFor={`${id}-${name}`}>{label ? label : name}</label>
-      <fieldset id={`${id}-${name}`}>
+      <div className="fieldset" id={`${id}-${name}`}>
         <input
           name={x}
           type="number"
@@ -32,7 +32,7 @@ const coordsRow = props => {
           }}
         />
         <Delete id={id} onClick={onDelete} />
-      </fieldset>
+      </div>
     </div>
   );
 };

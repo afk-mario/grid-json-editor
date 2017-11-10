@@ -72,6 +72,28 @@ html {
   color: var(--light-gray);
 }
 
+.container.two-columns {
+  display: flex;
+  width: 100%;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  color: var(--dark-blue);
+  margin: var(--margin) auto var(--margin) auto;
+}
+
+.two-columns h3 {
+  flex: 1;
+  margin: 0;
+  padding: var(--half-margin);
+  border: 2px solid;
+  border-right-width: 2px;
+  border-right-style: solid;
+  border-right-color: currentcolor;
+  border-right: none;
+}
+
 .page-child {
   height: calc(100vh - var(--header-height) - var(--footer-height));
   border-top: var(--border-division) solid var(--medium-gray);

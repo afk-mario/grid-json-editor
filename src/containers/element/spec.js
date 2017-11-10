@@ -76,8 +76,14 @@ const spec = [
     name: 'linePoints',
     label: 'Line Points',
     type: 'coords',
-    value: [[0,0]],
+    value: [[0, 0]],
     hide: true,
+  },
+  {
+    name: 'isLeadingImage',
+    label: 'Is leading Image?',
+    type: 'checkbox',
+    value: false,
   },
 ];
 

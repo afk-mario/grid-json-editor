@@ -17,7 +17,6 @@
 
 a.button {
     color: var(--black);
-    background: var(--white);
     text-decoration: none;
 }
 
@@ -34,23 +33,24 @@ a.button {
 
 .button.red {
     color: var(--white);
-    background-color: var(--red);
     background-image: var(--red-gradient);
     text-shadow: var(--text-shadow);
 }
 
 .button.red:hover {
     color: var(--white);
-    background-color: var(--red);
     background-image: var(--red-gradient);
 }
 
 .button.blue {
     color: var(--white);
-    background-color: var(--dark-blue);
+    border: 2px solid var(--dark-blue);
     text-shadow: var(--text-shadow);
+    background: transparent;
 }
 
 .button.blue:hover {
-    background-color: var(--blue);
+    /* background-color: var(--blue); */
+    border-color: var(--light-blue);
+    color: var(--light-blue);
 }

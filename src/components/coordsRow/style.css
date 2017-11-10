@@ -1,11 +1,25 @@
-fieldset {
+.fieldset {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
 }
 
-fieldset input {
+.fieldset input {
   display: block;
-  width: 48%;
+  width: 32%;
+  margin: 0;
+  padding: 0;
+}
+
+.fieldset .delete {
+  border: 2px solid var(--medium-gray);
+}
+
+.fieldset .delete:hover {
+  border-color: var(--red);
+}
+
+.coords-row {
+  margin: 0 0 var(--margin) 0;
 }

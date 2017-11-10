@@ -80,7 +80,7 @@ class Form extends React.Component {
             />
           ))}
           <div className="container two-columns">
-            <h2>Custom Data</h2>
+            <h3>Custom Data</h3>
             <span className="button blue" onClick={this.handleExtraField}>
               Add Field
             </span>

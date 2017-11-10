@@ -1,5 +1,7 @@
 .canvas-wrapper {
   padding: var(--half-margin);
+  display: flex;
+  flex-flow: column nowrap;
 }
 
 .canvas-wrapper > div {
