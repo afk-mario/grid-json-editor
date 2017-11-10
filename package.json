@@ -1,6 +1,6 @@
 {
   "name": "grid-json-editor",
-  "version": "0.13.0",
+  "version": "0.14.0",
   "private": true,
   "dependencies": {
     "classnames": "^2.2.5",
