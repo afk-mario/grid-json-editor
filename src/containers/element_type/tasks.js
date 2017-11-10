@@ -4,7 +4,6 @@ import {withRouter} from 'react-router';
 import {clearElementTypes} from '../../containers/element_type/actions';
 import {exportState} from '../../lib/export';
 import Tasks from '../../components/tasks';
-import {getRandomMessage} from '../../lib/messages';
 
 function mapStateToProps(state) {
   const {elementTypes} = state;
@@ -23,12 +22,6 @@ let ElementTasks = ({items, dispatch, history}) => {
       name: 'Export',
       onClick: () => {
         exportState({items, name: 'elementTypes'});
-      },
-    },
-    {
-      name: 'Load',
-      onClick: () => {
-        window.alert(getRandomMessage());
       },
     },
     {
