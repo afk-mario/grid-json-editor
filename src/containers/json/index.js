@@ -1,14 +1,14 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import JSONPretty from 'react-json-pretty';
-import cloneDeep from 'lodash/cloneDeep';
+import {clone} from '../../lib/utils';
 
 import './style.css';
 
 const mapStateToProps = state => {
   const {elements} = state || [];
 
-  const json = cloneDeep(elements).map(item => {
+  const json = clone([], elements).map(item => {
     delete item.pk;
     delete item.elementType;
     Object.keys(item).forEach(key => {
