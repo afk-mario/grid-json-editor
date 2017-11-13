@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import JSONPretty from 'react-json-pretty';
-import {cloneDeep} from 'lodash';
+import cloneDeep from 'lodash/cloneDeep';
 
 import './style.css';
 
