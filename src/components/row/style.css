@@ -1,5 +1,6 @@
 .row {
   height: 60px;
+  max-height: 60px;
   width: 100%;
   display: block;
   cursor: pointer;
