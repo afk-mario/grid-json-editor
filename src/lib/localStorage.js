@@ -2,18 +2,19 @@ export const loadState = () => {
   try {
     const elementsJson = localStorage.getItem('elements');
     const elementTypesJson = localStorage.getItem('elementTypes');
-    const settings = localStorage.getItem('settings');
+    const settingsJson = localStorage.getItem('settings');
     if (
       elementsJson === null ||
       elementTypesJson === null ||
-      settings === null
+      settingsJson === null
     ) {
       return undefined;
     }
 
     const elements = JSON.parse(elementsJson);
     const elementTypes = JSON.parse(elementTypesJson);
-    return {elements, elementTypes};
+    const settings = JSON.parse(settingsJson);
+    return {elements, elementTypes, settings};
   } catch (err) {
     return undefined;
   }

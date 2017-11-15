@@ -21,16 +21,18 @@ const store = createStore(
 
 store.subscribe(
   throttle(() => {
+    const {elements, elementTypes, settings} = store.getState();
     saveState({
-      elements: store.getState().elements,
-      elementTypes: store.getState().elementTypes
+      elements,
+      elementTypes,
+      settings,
     });
   }, 1000),
 );
 
 render(
   <Provider store={store}>
-    <App/>
+    <App />
   </Provider>,
   document.getElementById('root'),
 );

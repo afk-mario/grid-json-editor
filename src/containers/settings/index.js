@@ -8,6 +8,7 @@ import './style.css';
 const mapStateToProps = state => {
   const {settings} = state || {columns: 0, rows: 0};
 
+  console.log(state);
   return {
     columns: settings.columns,
     rows: settings.rows,

@@ -12,7 +12,9 @@ function elementTypes(state = [], action) {
       return [
         ...state,
         {
-          ...action,
+          pk: action.pk,
+          name: action.name,
+          fields: action.fields,
         },
       ];
     case EDIT_ELEMENT_TYPE:
